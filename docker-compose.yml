@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  pg:
+    image: postgres:13.3
+    environment:
+      POSTGRES_PASSWORD: 1
+    volumes:
+      - ../rabbit-nutrition-handbook/pg:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      target: base
+    tmpfs:
+      - /tmp
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app:cached
+    depends_on:
+      - pg
+    command: /bin/bash
+    ports:
+      - '3000:3000'
