@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.column :name, :text
       t.column :description, :text
       t.timestamps
-      t.add_index :name, unique: true
+      t.index :name, unique: true
     end
   end
 end
