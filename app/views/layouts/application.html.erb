@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RabbitNutritionHandbook</title>
+    <title>Rabbit Nutrition Handbook</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application.bootstrap", "data-turbo-track": "reload" %>
+    <%= javascript_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #34D399;">
+      <div class="container-fluid">
+        <span class="navbar-brand fs-1">Rabbit Nutrition Handbook</span>
+        <div class="navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
+          </div>
+          <form class="d-flex w-100">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          <div class="navbar-nav me-auto mb-2 mb-lg-0 w-25">
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="text-center px-4 py-5 my-5">
+      <%= yield %>
+    </div>
   </body>
 </html>
