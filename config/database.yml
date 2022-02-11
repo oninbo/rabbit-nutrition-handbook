@@ -85,5 +85,4 @@ test:
 production:
   <<: *default
   database: rabbit_nutrition_handbook_production
-  username: rabbit_nutrition_handbook
-  password: <%= ENV["RABBIT_NUTRITION_HANDBOOK_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
