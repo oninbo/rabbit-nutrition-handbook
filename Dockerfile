@@ -1,7 +1,6 @@
 FROM ruby:3.1.0-bullseye AS base
 
-RUN apt-get update && apt-get -y install postgresql-client-13 npm
-RUN npm install -g yarn
+RUN apt-get update && apt-get -y install postgresql-client-13
 
 WORKDIR /app
 
