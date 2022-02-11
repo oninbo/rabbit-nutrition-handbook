@@ -1,6 +1,7 @@
 FROM ruby:3.1.0-bullseye AS base
 
-RUN apt-get update && apt-get -y install postgresql-client-13
+RUN apt-get update && apt-get -y install postgresql-client-13 npm
+RUN npm install -g yarn
 
 WORKDIR /app
 
@@ -12,4 +13,4 @@ RUN bundle install
 
 COPY . .
 
-CMD bundle exec rails server
+CMD bundle exec bin/dev

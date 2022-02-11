@@ -2,11 +2,13 @@ version: '3.4'
 
 services:
   pg:
-    image: postgres:13.3
+    image: postgres:13.5
     environment:
+      LC_COLLATE: C.UTF-8
+      POSTGRES_USER: pg
       POSTGRES_PASSWORD: 1
     volumes:
-      - ../rabbit-nutrition-handbook/pg:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
 
   app:
     build:
@@ -23,3 +25,7 @@ services:
     command: /bin/bash
     ports:
       - '3000:3000'
+
+volumes:
+  pgdata:
+    driver: local
