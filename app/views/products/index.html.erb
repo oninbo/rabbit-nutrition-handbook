@@ -1,10 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="album bg-light">
-  <div class="container">
-    <div id="products" class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+  <div class="container" style="max-width: 950px;">
+    <div id="products" class="row row-cols-1 row-cols-sm-2 row-cols-xs-2 row-cols-md-4 g-3">
       <% @products.each do |product| %>
-        <div class="col" style="width: 12rem">
+        <div class="col container-md">
           <%= render "product_item", product: product %>
         </div>
       <% end %>
